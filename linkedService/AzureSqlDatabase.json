@@ -8,7 +8,16 @@
 			"database": "smil-dev-ne-sql-db",
 			"encrypt": "optional",
 			"trustServerCertificate": true,
-			"authenticationType": "SystemAssignedManagedIdentity"
+			"authenticationType": "SQL",
+			"userName": "smildev",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "smil-sql-db-password"
+			}
 		}
 	}
 }
