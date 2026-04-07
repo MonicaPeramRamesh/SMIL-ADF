@@ -1,0 +1,14 @@
+{
+	"name": "AzureSqlDatabase",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "smil-dev-ne-sql-server.database.windows.net",
+			"database": "smil-dev-ne-sql-db",
+			"encrypt": "optional",
+			"trustServerCertificate": true,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		}
+	}
+}
