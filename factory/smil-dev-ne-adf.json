@@ -1,0 +1,9 @@
+{
+	"name": "smil-dev-ne-adf",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "46a2f719-dd24-4f51-9e82-9bcd88c0c9ee",
+		"tenantId": "e1983fb4-add7-4610-a418-c6fb11a1261d"
+	}
+}
