@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@concat('daily_sales_',formatDateTime(convertTimeZone(utcNow(),'UTC','GMT Standard Time' ), 'yyyy-MM-dd'))\n\n",
+					"value": "@concat('daily_sales_',formatDateTime(convertTimeZone(utcNow(),'UTC','GMT Standard Time' ), 'yyyy-MM-dd'),'.csv')\n\n",
 					"type": "Expression"
 				},
 				"folderPath": "test",
