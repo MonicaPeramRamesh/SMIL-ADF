@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "smil-dev-ne-adf"
+		},
+		"AzureBlobStorage_properties_typeProperties_connectionString_secretName": {
+			"value": "smil-account-key"
+		},
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://smil-dev-ne-kv.vault.azure.net/"
+		},
+		"AzureSqlDatabase_properties_typeProperties_server": {
+			"value": "smil-dev-ne-sql-server.database.windows.net"
+		},
+		"AzureSqlDatabase_properties_typeProperties_database": {
+			"value": "smil-dev-ne-sql-db"
+		},
+		"AzureSqlDatabase_properties_typeProperties_userName": {
+			"value": "smildev"
+		}
+	}
+}
