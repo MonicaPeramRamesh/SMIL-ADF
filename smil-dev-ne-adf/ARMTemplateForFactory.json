@@ -30,6 +30,10 @@
 		"trigger2_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/3c43703c-96b9-41ca-ae7e-27921240e64d/resourceGroups/smil-dev-ne-rg/providers/Microsoft.Storage/storageAccounts/smildevneadls"
+		},
+		"trigger3_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/3c43703c-96b9-41ca-ae7e-27921240e64d/resourceGroups/smil-dev-ne-rg/providers/Microsoft.Storage/storageAccounts/smildevneadls"
 		}
 	},
 	"variables": {
@@ -304,7 +308,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipeline": {
 					"pipelineReference": {
 						"referenceName": "events",
@@ -355,6 +359,37 @@
 					"events": [
 						"Microsoft.Storage.BlobCreated",
 						"Microsoft.Storage.BlobDeleted"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/events')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger3')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "events",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/sample/blobs/",
+					"blobPathEndsWith": ".csv",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('trigger3_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
 					]
 				}
 			},

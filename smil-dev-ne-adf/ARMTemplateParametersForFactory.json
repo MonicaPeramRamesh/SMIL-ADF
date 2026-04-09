@@ -22,6 +22,9 @@
 		},
 		"trigger2_properties_typeProperties_scope": {
 			"value": "/subscriptions/3c43703c-96b9-41ca-ae7e-27921240e64d/resourceGroups/smil-dev-ne-rg/providers/Microsoft.Storage/storageAccounts/smildevneadls"
+		},
+		"trigger3_properties_typeProperties_scope": {
+			"value": "/subscriptions/3c43703c-96b9-41ca-ae7e-27921240e64d/resourceGroups/smil-dev-ne-rg/providers/Microsoft.Storage/storageAccounts/smildevneadls"
 		}
 	}
 }
