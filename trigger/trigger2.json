@@ -1,0 +1,25 @@
+{
+	"name": "trigger2",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "events",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/test/blobs/",
+			"blobPathEndsWith": "sample",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/3c43703c-96b9-41ca-ae7e-27921240e64d/resourceGroups/smil-dev-ne-rg/providers/Microsoft.Storage/storageAccounts/smildevneadls",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
