@@ -27,10 +27,6 @@
 			"type": "string",
 			"defaultValue": "smildev"
 		},
-		"trigger2_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/3c43703c-96b9-41ca-ae7e-27921240e64d/resourceGroups/smil-dev-ne-rg/providers/Microsoft.Storage/storageAccounts/smildevneadls"
-		},
 		"trigger3_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/3c43703c-96b9-41ca-ae7e-27921240e64d/resourceGroups/smil-dev-ne-rg/providers/Microsoft.Storage/storageAccounts/smildevneadls"
@@ -41,7 +37,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/events')]",
+			"name": "[concat(parameters('factoryName'), '/events_events')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -303,70 +299,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "events",
-						"type": "PipelineReference"
-					},
-					"parameters": {}
-				},
-				"type": "TumblingWindowTrigger",
-				"typeProperties": {
-					"frequency": "Minute",
-					"interval": 5,
-					"startTime": "2026-04-09T02:48:00Z",
-					"delay": "00:02:00",
-					"maxConcurrency": 1,
-					"retryPolicy": {
-						"count": 3,
-						"intervalInSeconds": 30
-					},
-					"dependsOn": []
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/events')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/trigger2')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "events",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "BlobEventsTrigger",
-				"typeProperties": {
-					"blobPathBeginsWith": "/test/blobs/",
-					"blobPathEndsWith": ".csv",
-					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('trigger2_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated",
-						"Microsoft.Storage.BlobDeleted"
-					]
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/events')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/trigger3')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -376,7 +308,7 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "events",
+							"referenceName": "events_events",
 							"type": "PipelineReference"
 						},
 						"parameters": {}
@@ -394,7 +326,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/events')]"
+				"[concat(variables('factoryId'), '/pipelines/events_events')]"
 			]
 		}
 	]
