@@ -1,0 +1,15 @@
+{
+	"name": "smil-nonprod-ne-adf",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8f4491ea-669f-4a53-85c9-b5d7c82d7dd8",
+		"tenantId": "0d5139e1-d30d-4d50-9135-b25de774bb6c"
+	}
+}
