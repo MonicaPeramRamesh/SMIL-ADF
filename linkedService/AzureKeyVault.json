@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
-			"baseUrl": "https://smil-dev-ne-kv.vault.azure.net/"
+			"baseUrl": "https://smil-nonprod-ne-kv.vault.azure.net/"
 		}
 	}
 }
