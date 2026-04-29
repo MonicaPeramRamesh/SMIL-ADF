@@ -1,0 +1,7 @@
+{
+	"name": "AzureKeyVault",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/0abeeabe-ca68-4b91-8fd6-34002d65fcc1/resourceGroups/smil-nonprod-ne-rg/providers/Microsoft.KeyVault/vaults/smil-nonprod-ne-kv",
+		"groupId": "vault"
+	}
+}
