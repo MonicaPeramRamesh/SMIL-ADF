@@ -1,0 +1,7 @@
+{
+	"name": "AzureDataLakeStorage755",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/0abeeabe-ca68-4b91-8fd6-34002d65fcc1/resourceGroups/test/providers/Microsoft.Storage/storageAccounts/smiltestadls",
+		"groupId": "dfs"
+	}
+}
