@@ -11,7 +11,7 @@
 					"referenceName": "AzureKeyVault1",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "test"
+				"secretName": "adls-key"
 			}
 		},
 		"connectVia": {
