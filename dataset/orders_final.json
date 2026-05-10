@@ -1,5 +1,5 @@
 {
-	"name": "orders",
+	"name": "orders_final",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
@@ -15,10 +15,13 @@
 					"type": "Expression"
 				},
 				"folderPath": {
-					"value": "@concat('source/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
+					"value": "@concat('destination/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
 					"type": "Expression"
 				},
-				"container": "orders"
+				"container": {
+					"value": "orders",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
