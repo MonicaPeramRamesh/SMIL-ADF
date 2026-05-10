@@ -1,0 +1,33 @@
+{
+	"name": "orders_destination",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat('orders_',formatDateTime(utcNow(), 'yyyy-MM-dd'),'.csv')",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat('destination/',formatDateTime(utcNow(), 'yyyy-MM-dd'))",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "orders",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
